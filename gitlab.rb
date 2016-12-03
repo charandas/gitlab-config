@@ -683,9 +683,9 @@ nginx['redirect_http_to_https'] = true
 # nginx['ssl_client_certificate'] = "/etc/gitlab/ssl/ca.crt" # Most root CA's are included by default
 # nginx['ssl_verify_client'] = "off" # enable/disable 2-way SSL client authentication
 # nginx['ssl_verify_depth'] = "1" # if ssl_verify_client on, verification depth in the client certificates chain
-nginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.fathm.io/fullchain.pem"
-nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.fathm.io/privkey.pem"
-# nginx['ssl_ciphers'] = "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256"
+nginx['ssl_certificate'] = "/root/certs/gitlab.fathm.io/gitlab.fathm.io_ecc/fullchain.cer"
+nginx['ssl_certificate_key'] = "/root/certs/gitlab.fathm.io/gitlab.fathm.io_ecc/gitlab.fathm.io.key"
+nginx['ssl_ciphers'] = "HIGH+kEECDH+AESGCM:HIGH+kEECDH:HIGH+kEDH:HIGH:!aNULL"
 # nginx['ssl_prefer_server_ciphers'] = "on"
 # nginx['ssl_protocols'] = "TLSv1 TLSv1.1 TLSv1.2" # recommended by https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html & https://cipherli.st/
 # nginx['ssl_session_cache'] = "builtin:1000  shared:SSL:10m" # recommended in https://nginx.org/en/docs/http/ngx_http_ssl_module.html
@@ -1069,8 +1069,8 @@ nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.fathm.io/privkey.pe
 # Registry NGINX #
 ##################
 
-registry_nginx['ssl_certificate'] = "/etc/letsencrypt/live/gitlab.fathm.io/fullchain.pem"
-registry_nginx['ssl_certificate_key'] = "/etc/letsencrypt/live/gitlab.fathm.io/privkey.pem"
+registry_nginx['ssl_certificate'] = "/root/certs/gitlab.fathm.io/gitlab.fathm.io_ecc/fullchain.cer"
+registry_nginx['ssl_certificate_key'] = "/root/certs/gitlab.fathm.io/gitlab.fathm.io_ecc/gitlab.fathm.io.key"
 # registry_nginx['listen_port'] = nil # override only if you use a reverse proxy: https://docs.gitlab.com/omnibus/settings/nginx.html#setting-the-nginx-listen-port
 # registry_nginx['listen_https'] = nil # override only if your reverse proxy internally communicates over HTTP: https://docs.gitlab.com/omnibus/settings/nginx.html#supporting-proxied-ssl
 # registry_nginx['proxy_set_headers'] = {
