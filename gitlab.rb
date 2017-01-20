@@ -360,7 +360,7 @@ registry_external_url 'https://gitlab.fathm.io:4657'
 # gitlab_rails['registry_enabled'] = true
 # gitlab_rails['registry_host'] = "registry.gitlab.example.com"
 # gitlab_rails['registry_port'] = "5005"
-# gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
+gitlab_rails['registry_path'] = "/mnt/gitlab/registry_data"
 #
 ## Do not change the following 3 settings unless you know what you are doing
 #
